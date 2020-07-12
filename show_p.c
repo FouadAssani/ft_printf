@@ -6,13 +6,13 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 03:49:12 by fassani           #+#    #+#             */
-/*   Updated: 2020/07/09 10:08:41 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/12 21:56:18 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	next_step_p(t_conv *a, uint64_t integer, char *buffer, size_t *len)
+void	next_step_p(t_conv *a, unsigned long integer, char *buffer, size_t *len)
 {
 	if (a->signs == '0')
 	{
@@ -36,7 +36,7 @@ void	next_step_p(t_conv *a, uint64_t integer, char *buffer, size_t *len)
 	}
 }
 
-size_t	show_p(t_conv a, uint64_t integer)
+size_t	show_p(t_conv a, unsigned long integer)
 {
 	char	*buffer;
 	size_t	len;

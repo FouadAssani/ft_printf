@@ -6,7 +6,7 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 03:49:12 by fassani           #+#    #+#             */
-/*   Updated: 2020/07/09 10:08:14 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/12 22:03:48 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*newline(size_t size)
 	return (str);
 }
 
-char	*usignednbr_tobase(unsigned int nbr, char *base)
+char	*usignednbr_tobase(unsigned long nbr, char *base)
 {
 	char	*str;
 	int		i;
@@ -57,7 +57,7 @@ char	*usignednbr_tobase(unsigned int nbr, char *base)
 	i = 0;
 	if (!(str = newline(50)))
 		return (0);
-	if ((nbr == 0) || (nbr >= 4294967295))
+	if ((nbr == 0) || (nbr >= (unsigned long)-1))
 	{
 		str[0] = '0';
 		str[1] = 0;
@@ -73,7 +73,7 @@ char	*usignednbr_tobase(unsigned int nbr, char *base)
 	return (str);
 }
 
-char	*usignednbr_tobase_reverse(uint64_t nbr, char *base)
+char	*usignednbr_tobase_reverse(unsigned long nbr, char *base)
 {
 	char *str;
 

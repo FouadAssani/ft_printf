@@ -6,7 +6,7 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 13:47:30 by fouadassani       #+#    #+#             */
-/*   Updated: 2020/07/09 09:57:48 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/12 21:56:44 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ void			next_step3_x(t_conv *a, t_save *v, unsigned int integer);
 void			next_step2bis_x(t_conv *a, t_save *v);
 void			next_step2_x(t_conv *a, t_save *v, unsigned int integer);
 void			next_step_x(t_conv *a, t_save *v, unsigned int integer);
-size_t			show_p(t_conv a, uint64_t integer);
-void			next_step_p(t_conv *a, uint64_t integer,
+size_t			show_p(t_conv a, unsigned long integer);
+void			next_step_p(t_conv *a, unsigned long integer,
 	char *buffer, size_t *len);
 void			set_list_zero(t_conv *list, int len);
 size_t			read_array(const char *str, va_list arg, t_conv *list);
@@ -108,8 +108,8 @@ void			ft_putnbr_fd(long int n, int fd);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putunsignednbr_fd(unsigned int n, int fd);
 char			*ft_strchr(const char *s, int c);
-char			*usignednbr_tobase(unsigned int nbr, char *base);
-char			*usignednbr_tobase_reverse(uint64_t nbr, char *base);
+char			*usignednbr_tobase(unsigned long nbr, char *base);
+char			*usignednbr_tobase_reverse(unsigned long nbr, char *base);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strdup(const char *s1);
 void			parse_input(char *str, t_conv *list);

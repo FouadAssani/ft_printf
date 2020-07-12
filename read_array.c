@@ -6,7 +6,7 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 03:49:12 by fassani           #+#    #+#             */
-/*   Updated: 2020/07/09 10:09:13 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/12 22:02:53 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	next_step2(va_list arg, t_conv *list, t_array_buf *a_buf)
 			va_arg(arg, char *));
 	else if (list[a_buf->list_index].type == 'p')
 		a_buf->len += show_p(list[a_buf->list_index],
-			va_arg(arg, uint64_t));
+			va_arg(arg, unsigned long));
 	else if (list[a_buf->list_index].type == 'i'
 		|| list[a_buf->list_index].type == 'd')
 		a_buf->len += show_i(list[a_buf->list_index],
