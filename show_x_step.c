@@ -6,7 +6,7 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 03:49:12 by fassani           #+#    #+#             */
-/*   Updated: 2020/07/09 10:08:20 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/13 10:56:50 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,30 @@ void			next_step3_x(t_conv *a, t_save *v, unsigned int integer)
 	}
 }
 
-void			next_step2bis_x(t_conv *a, t_save *v)
+void			next_step2bis2_x(t_conv *a, t_save *v)
 {
 	v->len += show_width(' ', calcul_width_string(a->width
 		- v->prec_buff, ft_strlen(v->buff)));
+}
+
+void			next_step2bis_x(t_conv *a, t_save *v)
+{
+	if (a->prec_is_on == 'y' && a->prec >= (int)ft_strlen(v->buff))
+		v->len += show_width(' ', calcul_width_string(a->width
+			- v->prec_buff, ft_strlen(v->buff)));
+	else if (a->prec_is_on == 'y' && a->fill == 1
+		&& a->prec < (int)ft_strlen(v->buff))
+	{
+		if (a->prec < 0)
+			v->len += show_width('0', calcul_width_string(a->width
+				- v->prec_buff, ft_strlen(v->buff)));
+		else
+			v->len += show_width(' ', calcul_width_string(a->width
+				- v->prec_buff, ft_strlen(v->buff)));
+	}
+	else
+		v->len += show_width('0', calcul_width_string(a->width
+			- v->prec_buff, ft_strlen(v->buff)));
 }
 
 void			next_step2_x(t_conv *a, t_save *v, unsigned int integer)
@@ -71,27 +91,9 @@ void			next_step2_x(t_conv *a, t_save *v, unsigned int integer)
 				v->len += show_width(' ', calcul_width_string(a->width
 					- v->prec_buff, ft_strlen(v->buff)));
 			else
-			{
-				if (a->prec_is_on == 'y' && a->prec >= (int)ft_strlen(v->buff))
-					v->len += show_width(' ', calcul_width_string(a->width
-						- v->prec_buff, ft_strlen(v->buff)));
-				else
-					v->len += show_width('0', calcul_width_string(a->width
-						- v->prec_buff, ft_strlen(v->buff)));
-			}
+				next_step2bis_x(a, v);
 		}
 	}
 	else
-		next_step2bis_x(a, v);
-}
-
-void			next_step_x(t_conv *a, t_save *v, unsigned int integer)
-{
-	if (a->signs == '0')
-	{
-		next_step2_x(a, v, integer);
-		next_step3_x(a, v, integer);
-	}
-	else if (a->signs == '-')
-		next_step4_x(a, v, integer);
+		next_step2bis2_x(a, v);
 }

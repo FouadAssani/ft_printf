@@ -6,7 +6,7 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/27 13:47:30 by fouadassani       #+#    #+#             */
-/*   Updated: 2020/07/12 21:56:44 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/13 10:51:54 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ void			next_step3_u(t_conv *a, unsigned int integer,
 	int prec, size_t *len);
 void			next_step2_u(t_conv *a, unsigned int integer,
 	int prec, size_t *len);
+void			next_step2bis_u(t_conv *a, unsigned int integer,
+	int prec, size_t *len);
 void			next_step_u(t_conv *a, unsigned int integer,
 	int prec, size_t *len);
 size_t			show_s(t_conv a, char *str);
@@ -95,6 +97,7 @@ size_t			show_c(t_conv array, int integer);
 size_t			show_x(t_conv a, unsigned int integer, int maj);
 void			next_step4_x(t_conv *a, t_save *v, unsigned int integer);
 void			next_step3_x(t_conv *a, t_save *v, unsigned int integer);
+void			next_step2bis2_x(t_conv *a, t_save *v);
 void			next_step2bis_x(t_conv *a, t_save *v);
 void			next_step2_x(t_conv *a, t_save *v, unsigned int integer);
 void			next_step_x(t_conv *a, t_save *v, unsigned int integer);

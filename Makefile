@@ -6,7 +6,7 @@
 #    By: fassani <fassani@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/15 04:00:06 by fassani           #+#    #+#              #
-#    Updated: 2020/07/12 22:00:04 by fassani          ###   ########.fr        #
+#    Updated: 2020/07/13 10:27:23 by fassani          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS	= \
 ./show_i_step.c\
 ./show_i_step2.c\
 ./show_u.c\
+./show_u_step.c\
 ./ft_atoi.c\
 ./ft_isdigit.c\
 ./ft_printf.c\

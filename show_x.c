@@ -6,7 +6,7 @@
 /*   By: fassani <fassani@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 03:49:12 by fassani           #+#    #+#             */
-/*   Updated: 2020/07/09 10:08:26 by fassani          ###   ########.fr       */
+/*   Updated: 2020/07/13 10:48:49 by fassani          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,17 @@ size_t			calcul_prec(int len, int prec)
 		return (0);
 	else
 		return (prec - len);
+}
+
+void			next_step_x(t_conv *a, t_save *v, unsigned int integer)
+{
+	if (a->signs == '0')
+	{
+		next_step2_x(a, v, integer);
+		next_step3_x(a, v, integer);
+	}
+	else if (a->signs == '-')
+		next_step4_x(a, v, integer);
 }
 
 size_t			show_x(t_conv a, unsigned int integer, int maj)
